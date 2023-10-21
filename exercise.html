@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+ const elements = document.querySelectorAll('input, label');
+
+elements.forEach(element => {
+  if (element.tagName === 'LABEL') {
+    console.log(`${element.textContent.trim()}:`);
+  } else if (element.tagName === 'INPUT') {
+    console.log(`${element.previousElementSibling.textContent.trim()} ${element.value}`);
+  }
+});</script>
